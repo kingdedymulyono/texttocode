@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Teks Saja</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #2575fc;
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #6a11cb;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
+        }
+        
+        input.invalid {
+            border-color: #ff4757;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% {transform: translateX(0);}
+            20%, 60% {transform: translateX(-5px);}
+            40%, 80% {transform: translateX(5px);}
+        }
+        
+        .status {
+            height: 20px;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+        
+        .valid {
+            color: #2ed573;
+        }
+        
+        .invalid-text {
+            color: #ff4757;
+        }
+        
+        .hint {
+            background-color: #f1f2f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        .emoji {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✍️ Input Teks Saja</h1>
+        
+        <div class="input-container">
+            <input type="text" id="textInput" placeholder="Ketikkan teks di sini...">
+            <div class="status" id="statusMessage"></div>
+        </div>
+        
+        <div class="hint">
+            <p><span class="emoji">✅</span> Diperbolehkan: Huruf (A-Z, a-z), spasi, karakter khusus seperti é, ç, ü</p>
+            <p><span class="emoji">❌</span> Tidak diperbolehkan: Angka (0-9), simbol (@, #, $, %, dll.)</p>
+        </div>
+    </div>
+
+    <script>
+        const textInput = document.getElementById('textInput');
+        const statusMessage = document.getElementById('statusMessage');
+        
+        // Fungsi untuk memvalidasi input
+        function validateInput(event) {
+            // Mendapatkan nilai input
+            let inputValue = event.target.value;
+            
+            // Menyimpan posisi kursor
+            const cursorPosition = event.target.selectionStart;
+            
+            // Regex untuk mendeteksi karakter yang tidak diinginkan (angka dan simbol)
+            const invalidCharsRegex = /[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g;
+            
+            // Memeriksa apakah ada karakter yang tidak valid
+            const hasInvalidChars = invalidCharsRegex.test(inputValue);
+            
+            if (hasInvalidChars) {
+                // Menghapus karakter yang tidak valid
+                event.target.value = inputValue.replace(invalidCharsRegex, '');
+                
+                // Memperbarui posisi kursor setelah penghapusan
+                event.target.setSelectionRange(cursorPosition - 1, cursorPosition - 1);
+                
+                // Menampilkan pesan error
+                statusMessage.textContent = 'Input tidak valid! Hanya teks yang diperbolehkan.';
+                statusMessage.className = 'status invalid-text';
+                
+                // Menambahkan efek visual untuk input tidak valid
+                event.target.classList.add('invalid');
+                setTimeout(() => {
+                    event.target.classList.remove('invalid');
+                }, 500);
+            } else {
+                // Menampilkan pesan sukses jika input valid
+                if (event.target.value.length > 0) {
+                    statusMessage.textContent = 'Input valid!';
+                    statusMessage.className = 'status valid';
+                } else {
+                    statusMessage.textContent = '';
+                }
+            }
+        }
+        
+        // Event listener untuk input
+        textInput.addEventListener('input', validateInput);
+        
+        // Mencegah paste teks yang mengandung karakter tidak valid
+        textInput.addEventListener('paste', (e) => {
+            e.preventDefault();
+            
+            // Mendapatkan teks yang di-paste
+            const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+            
+            // Menghapus karakter yang tidak valid dari teks yang di-paste
+            const cleanedText = pastedText.replace(/[0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g, '');
+            
+            // Menyisipkan teks yang sudah dibersihkan
+            document.execCommand('insertText', false, cleanedText);
+        });
+    </script>
+</body>
+</html>
