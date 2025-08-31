@@ -12,20 +12,40 @@
 </head>
 
 <body>
-    <div class="container p-4 my-5 rounded-5">
-        <h2 class="m-2 rounded-4 text-center bg bg-primary p-4 text-white shadow">Text To Code
+    <div id="main" class="container p-2 my-5 rounded-5">
+        <h2 id="title" class="m-2 rounded-4 text-center bg bg-primary p-4 text-white shadow">
+            Text To Code
         </h2>
         <div class="content m-2 bg-primary rounded-4 d-flex justify-content-center  flex-column gap-4 shadow-lg">
-            <input class=" form-control" type="text" id="inputText" placeholder="Input the text"
-                aria-autocomplete="none">
-            <div id="result" class=" bg-secondary-subtle p-2 rounded-2">The result will be here
+            <label id="inputLabel" for="inputText" class=" fw-light text-white fs-4">
+                <span>Text</span>
+                <input class=" form-control fs-5" type="text" id="inputText" placeholder="Input characters"
+                    aria-autocomplete="none">
+            </label>
+            <div class="">
+                <p id="resultLabel" class="m-0 fw-light text-white fs-4">
+                    Code Result</p>
+                <div class="d-flex gap-2">
+                    <div id="result" class="fs-5 bg-secondary-subtle p-2 rounded-2 text-black">
+                        <span class="optional">The </span> 
+                        result <span class="optional"> will be here </span>
+                    </div>
+                    <div class="send btn btn-outline-light d-flex justify-content-center align-items-center"><i class="bi bi-send-fill"></i></div>
+                </div>
             </div>
-            <button type="button" id="clip" class="clipboard btn btn-outline-light shadow">
-                Copy To Clipboard
-                <i class="bi bi-clipboard"></i>
-            </button>
+            <div class="d-flex w-100 gap-2 ">
+                <button type="button" id="clip" class="clipboard btn btn-light shadow w-50">
+                    Copy <span class="optional">To Clipboard</span>
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <button id="convert" class="btn btn-outline-light w-50 shadowz" type="button">
+                    <span class="optional">Convert</span>
+                    <i class="bi bi-arrow-down-up"></i>
+                </button>
+            </div>
         </div>
     </div>
+    <div id="fade"></div>
 </body>
 <footer class=" fixed-bottom bottom-0 p-3 bg bg-primary text-white">
     2025 @Dedyas

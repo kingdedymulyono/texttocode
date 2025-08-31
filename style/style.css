@@ -6,13 +6,21 @@ body{
     background-size: contain;
 }
 .container{
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px) brightness(102%);
     box-shadow: 
     inset 0 0 12px 12px white,
     0 0 24px 2px gray ;
 }
 .content{
     padding: 2rem !important;
+
+}
+#result{
+    text-transform: capitalize;
+    width: calc(100% - 10dvw);
+}
+.send{
+    width: 10dvw;
 
 }
 input{
@@ -23,8 +31,21 @@ input{
     cursor: pointer;
     transform: scale(1);
 }
+#fade{
+    /* background-color: white; */
+    background-image: linear-gradient(to top , #fff , #fff, transparent);
+    height: 60dvh;
+    width: 100dvw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
 @media (max-width:640px) {
     .container{
         max-width: 88dvw;
+    }
+    .optional{
+        display: none;
     }
 }
