@@ -48,4 +48,9 @@ input{
     .optional{
         display: none;
     }
+    #result,#inputText{
+        display: flex;
+        align-items: center;
+        font-size: 12px !important;
+    }
 }
