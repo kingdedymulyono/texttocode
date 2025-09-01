@@ -27,10 +27,12 @@
                     Code Result</p>
                 <div class="d-flex gap-2">
                     <div id="result" class="fs-5 bg-secondary-subtle p-2 rounded-2 text-black">
-                        <span class="optional">The </span> 
+                        <span class="optional">The </span>
                         result <span class="optional"> will be here </span>
                     </div>
-                    <div class="send btn btn-outline-light d-flex justify-content-center align-items-center"><i class="bi bi-send-fill"></i></div>
+                    <div id="send" class="send btn btn-outline-light d-flex justify-content-center align-items-center">
+                        <i class="bi bi-send-fill"></i>
+                    </div>
                 </div>
             </div>
             <div class="d-flex w-100 gap-2 ">
@@ -44,6 +46,15 @@
                 </button>
             </div>
         </div>
+    </div>
+    <div id="saved" class="container p-2 my-5 rounded-5">
+        <div class="bg-primary m-2 p-2 rounded-4 text-white">
+            <div class="fs-5 m-1 fw-light p-2">Your saved code will be here</div>
+        </div>
+        <ul class="list-group m-2 rounded-4" id="savedList">
+        </ul>
+        <button id="deleteAll" type="button" class="btn btn-outline-danger rounded-4 m-2 p-3">
+            Delete All Data</button>
     </div>
     <div id="fade"></div>
 </body>
