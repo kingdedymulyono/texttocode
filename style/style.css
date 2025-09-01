@@ -52,7 +52,7 @@ input{
     .optional{
         display: none;
     }
-    #result,#inputText{
+    #result,#inputText,#savedList{
         display: flex;
         align-items: center;
         font-size: 12px !important;
