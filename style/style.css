@@ -5,6 +5,13 @@ body{
     background-image: url("../public/bgabs.jpg");
     background-size: contain;
 }
+nav span{
+    cursor: pointer;
+}
+nav img{
+    max-width: 2rem;
+    border-radius: 50%;
+}
 .container{
     backdrop-filter: blur(2px) brightness(102%);
     box-shadow: 
