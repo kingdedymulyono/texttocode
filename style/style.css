@@ -45,6 +45,13 @@ input{
     /* min-height: 20dvw; */
     margin-bottom: 20dvh !important;
 }
+/* .list{
+    display: flex !important;
+    justify-content: space-between;
+} */
+ .closed{   
+    float:right;
+ }
 @media (max-width:640px) {
     .container{
         max-width: 88dvw;
