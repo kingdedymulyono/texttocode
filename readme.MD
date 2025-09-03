@@ -59,7 +59,7 @@ Dedyas
 
 ### 🔗 Live Demo
 
-You can view a live demo of this project [here](https://www.google.com/search?q=link-to-your-live-demo).
+You can view a live demo of this project [here](https://kingdedymulyono.github.io/texttocode).
 
 ### INDONESIAN 🌏
 
@@ -124,4 +124,4 @@ Dedyas
 
 ### 🔗 Demo Langsung
 
-Anda dapat melihat demo langsung proyek ini [di sini](https://www.google.com/search?q=link-to-your-live-demo).
+Anda dapat melihat demo langsung proyek ini [di sini](https://kingdedymulyono.github.io/texttocode).
