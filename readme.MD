@@ -60,3 +60,68 @@ Dedyas
 ### 🔗 Live Demo
 
 You can view a live demo of this project [here](https://www.google.com/search?q=link-to-your-live-demo).
+
+### INDONESIAN 🌏
+
+
+## 🚀 Konverter Teks-ke-Kode | Kode-ke-Teks
+
+Ini adalah aplikasi web sederhana namun kuat yang mengubah teks biasa menjadi kode numerik dan sebaliknya. Ini adalah proyek yang menyenangkan dan praktis yang dirancang untuk menunjukkan keahlian saya dalam **HTML5**, **CSS3 (dengan Bootstrap 5.3)**, dan **Vanilla JavaScript**.
+
+-----
+
+### ✨ Fitur
+
+  * **Konversi Dua Arah:** Beralih dengan mudah antara konversi **Teks ke Kode** dan **Kode ke Teks** dengan satu klik tombol.
+  * **Antarmuka Intuitif:** Desain yang bersih dan responsif yang dibuat dengan **Bootstrap 5.3** memastikan pengalaman pengguna yang lancar di semua perangkat.
+  * **Penyimpanan Persisten:** Kode yang Anda konversi secara otomatis disimpan ke **local storage** browser Anda, sehingga Anda dapat mengaksesnya bahkan setelah memuat ulang halaman.
+  * **Fungsionalitas Papan Klip:** Tombol "Salin" yang praktis memungkinkan Anda menyalin hasilnya secara instan ke papan klip.
+  * **UI Dinamis:** Antarmuka diperbarui secara dinamis saat Anda mengetik, memberikan hasil konversi secara real-time.
+  * **Hapus & Atur Ulang:** Tombol "Delete All Data" memungkinkan Anda menghapus semua konversi yang tersimpan dari local storage.
+
+-----
+
+### 🛠️ Teknologi yang Digunakan
+
+  * **HTML5:** Untuk struktur aplikasi.
+  * **CSS3:** Untuk styling, dengan fokus pada estetika modern dan bersih.
+  * **Bootstrap 5.3:** Digunakan untuk tata letak responsif dan komponen siap pakai, mempercepat pengembangan.
+  * **Vanilla JavaScript:** Menggerakkan semua fungsionalitas inti, termasuk logika konversi, manipulasi DOM, penanganan event, dan manajemen local storage.
+  * **SweetAlert2:** Pustaka JavaScript yang digunakan untuk membuat pesan pop-up yang indah, responsif, dan dapat disesuaikan untuk pengalaman pengguna yang lebih baik (misalnya, konfirmasi penyalinan yang berhasil).
+
+-----
+
+### 💻 Cara Kerja
+
+Inti dari aplikasi ini adalah pernyataan `switch` JavaScript yang memetakan setiap huruf alfabet ke posisi yang sesuai (misalnya, `a` = `1`, `b` = `2`, dan seterusnya). Fungsi terpisah menangani konversi terbalik dari angka kembali ke huruf. Spasi diwakili oleh tanda hubung (`-`) untuk mempertahankan pemisahan kata.
+
+-----
+
+### 🎨 Desain & Aksesibilitas
+
+Desain memprioritaskan kejelasan dan kemudahan penggunaan. Skema warna sederhana dan konsisten, dengan kontras yang kuat untuk kemudahan membaca. Penggunaan Bootstrap memastikan tata letak ramah seluler dan mudah diakses.
+
+-----
+
+### 📁 Struktur Proyek
+
+```
+├── index.html          # Halaman utama aplikasi
+├── style
+│   └── style.css       # Gaya kustom
+├── script
+│   └── script.js       # Semua logika JavaScript
+└── README.md
+```
+
+-----
+
+### ✍️ Penulis
+
+Dedyas
+
+-----
+
+### 🔗 Demo Langsung
+
+Anda dapat melihat demo langsung proyek ini [di sini](https://www.google.com/search?q=link-to-your-live-demo).
